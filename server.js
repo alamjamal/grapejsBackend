@@ -44,7 +44,7 @@ app.use('/api/assets', assetRoute);
 app.use('/api/', uiRoute);
 app.get('/:pageId?', renderHtml);
 
-const PORT = process.env.APP_PORT || 8080;
+const PORT = process.env.APP_PORT || 4000;
 app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
 });
