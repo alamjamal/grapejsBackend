@@ -11,7 +11,12 @@ export const listPages = async () => {
   const pages = await Pages.find({});
   return pages;
 };
-export const deletePage = async (pageId) => {};
+export const deletePage = async (pageId) => {
+
+ const res = await Pages.findByIdAndDelete({_id:pageId})
+ if(res) return {message:"page deleted"}
+
+};
 export const updatePage = async (pageId, pageBody) => {};
 export const pageDetails = async (pageId) => {
   const pages = await Pages.findOne({ _id: pageId });

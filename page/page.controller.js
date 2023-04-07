@@ -41,5 +41,6 @@ export const loadContent = async (req, res) => {
   const { pageId } = req.params;
   res.header('Content-Type', 'application/json');
   const pageData = await pageDetails(pageId);
-  res.json(pageData.content);
+  if (pageData) return res.json(pageData.content);
+  else return {message:"No Page"}
 };

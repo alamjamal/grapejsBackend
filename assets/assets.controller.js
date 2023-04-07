@@ -2,17 +2,19 @@ export const loadAllAssets = async (req, res) => {
   const assets = [
     {
       type: 'image',
-      src: 'http://placehold.it/350x250/459ba8/fff/image2.jpg',
+      src: 'https://edeekshaam.in/static/media/i.316b4dddbfcb017908dc.png',
       height: 350,
       width: 250,
     },
     {
-      src: 'http://placehold.it/350x250/79c267/fff/image3.jpg',
+      type: 'image',
+     src: 'https://edeekshaam.in/static/media/i.316b4dddbfcb017908dc.png',
       height: 350,
       width: 250,
     },
     {
-      src: 'http://placehold.it/350x250/79c267/fff/image3.jpg',
+      type: 'image',
+     src: 'https://edeekshaam.in/static/media/i.316b4dddbfcb017908dc.png',
       height: 350,
       width: 250,
     },
