@@ -7,6 +7,7 @@ import pageRoute from './page/page.route';
 import assetRoute from './assets/assets.route';
 import projectRoute from './project/project.route';
 import renderHtml from './render/render.controller';
+import userRoute from './user/user.route';
 //Initialize App
 const app = express();
 app.use(express.json());
@@ -41,8 +42,12 @@ mongoose.connect(
 app.use('/api/projects', projectRoute);
 app.use('/api/pages', pageRoute);
 app.use('/api/assets', assetRoute);
-app.use('/api/', uiRoute);
+app.use('/api/user', userRoute);
+
+// app.use('/api/', uiRoute);
 app.get('/:pageId?', renderHtml);
+
+
 
 const PORT = process.env.APP_PORT || 4000;
 app.listen(PORT, () => {

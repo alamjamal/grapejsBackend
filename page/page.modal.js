@@ -14,6 +14,25 @@ const Page = new mongoose.Schema(
       required: true,
     },
     content: Object,
+
+    userName: {
+      type: String,
+      required: true,
+      trim: true,
+      maxlength: 25,
+    },
+    location: {
+      type: String,
+      
+    },
+    industry: {
+      type: String,
+    },
+    type: {
+      type: String,
+    },
+
+    
   },
   {
     timestamps: true,
