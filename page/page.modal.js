@@ -13,6 +13,7 @@ const Page = new mongoose.Schema(
       type: String,
       required: true,
     },
+
     content: Object,
 
     userName: {
@@ -21,18 +22,18 @@ const Page = new mongoose.Schema(
       trim: true,
       maxlength: 25,
     },
+
     location: {
-      type: String,
-      
-    },
-    industry: {
-      type: String,
-    },
-    type: {
       type: String,
     },
 
-    
+    industry: {
+      type: String,
+    },
+
+    type: {
+      type: String,
+    },
   },
   {
     timestamps: true,
