@@ -5,7 +5,7 @@
     "title": "Team Techanda GrapeJs with AI Site Builder",
     "description": "With GrapeJs and AI Site Builder technology, users can quickly and easily create professional-looking websites that are optimized for speed, performance, and user engagement. Whether you are a small business owner, a blogger, or a web designer, GrapeJs and AI Site Builder technology can help you achieve your goals and bring your website to life.",
     "license": {
-      "name": "MIT",
+      "name": "Link",
       "url": "https://alamjamal.ml/"
     }
   },
@@ -120,7 +120,117 @@
         }
       }
 
+    },
+
+
+    "/assets": {
+      "get": {
+        "tags": [
+          "Assets"
+        ],
+        "summary": "Get all Assets in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Assets"
+            }
+          }
+        }
+      }
+    },
+
+    "/assets/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of Assets that we want to find",
+          "type": "string",
+          "pattern":"^[0-9a-fA-F]{24}$"
+        }
+      ],
+     
+      "get": {
+        "summary": "Get Assets with given ID",
+        "tags": [
+          "Assets"
+        ],
+        "responses": {
+          "200": {
+            "description": "Assets Information",
+            "schema": {
+              "$ref": "#/definitions/Assets"
+            }
+          }
+        }
+      }
+
+    },
+
+    "/assets/addassets/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of Assets that we want to add",
+          "type": "string",
+          "pattern":"^[0-9a-fA-F]{24}$"
+        }
+      ],
+     
+      "get": {
+        "summary": "Add Assets with given ID",
+        "tags": [
+          "Assets"
+        ],
+        "responses": {
+          "200": {
+            "description": "Assets Information",
+            "schema": {
+              "$ref": "#/definitions/Assets"
+            }
+          }
+        }
+      }
+
+    },
+
+    "/assets/addcontent/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of Content that we want to add",
+          "type": "string",
+          "pattern":"^[0-9a-fA-F]{24}$"
+        }
+      ],
+     
+      "get": {
+        "summary": "Add Content with given ID",
+        "tags": [
+          "Assets"
+        ],
+        "responses": {
+          "200": {
+            "description": "Content Information",
+            "schema": {
+              "$ref": "#/definitions/Assets"
+            }
+          }
+        }
+      }
+
     }
+
+
+
+
+
 
 
   },
@@ -154,7 +264,33 @@
           "type": "string"
         }
       }
+    },
+
+    "Assets": {
+      "required": [
+        "pageId",
+        "src"
+      ],
+      "properties": {
+        
+        "pageId": {
+          "type": "string"
+          
+        },
+        "src": {
+          "type": "string"
+        },
+        "width": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        }
+        
+      }
     }
+
+
   },
   "Pages": {
     "type": "array",
