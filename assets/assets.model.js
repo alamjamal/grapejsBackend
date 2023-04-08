@@ -10,15 +10,14 @@ const Assets = new mongoose.Schema(
     },
     src: {
       type: String,
-      required: true,
     },
     width: {
       type: String,
-      default : 256
+      default : 250
     },
     height: {
       type: String,
-      default : 256
+      default : 350
     },
   },
   {
