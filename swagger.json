@@ -1,0 +1,90 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Team Techanda GrapeJs with AI Site Builder",
+    "description": "With GrapeJs and AI Site Builder technology, users can quickly and easily create professional-looking websites that are optimized for speed, performance, and user engagement. Whether you are a small business owner, a blogger, or a web designer, GrapeJs and AI Site Builder technology can help you achieve your goals and bring your website to life.",
+    "license": {
+      "name": "MIT",
+      "url": "https://alamjamal.ml/"
+    }
+  },
+  "host": "localhost:4000",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Pages",
+      "description": "API for pages in the system"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/pages": {
+      "post": {
+        "tags": [
+          "Pages"
+        ],
+        "description": "Create new pages in system",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "body",
+            "description": "Page that we want to create",
+            "schema": {
+              "$ref": "#/definitions/Page"
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New page is created",
+            "schema": {
+              "$ref": "#/definitions/Page"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Page": {
+      "required": [
+        "name",
+        "location"
+      ],
+      "properties": {
+        
+        "userName": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "industry": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "Pages": {
+    "type": "array",
+    "$ref": "#/definitions/Page"
+  }
+}

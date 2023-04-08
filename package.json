@@ -32,6 +32,8 @@
     "express": "^4.17.1",
     "hbs": "^4.1.1",
     "mongoose": "^5.12.2",
-    "openai": "^3.2.1"
+    "openai": "^3.2.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.2"
   }
 }

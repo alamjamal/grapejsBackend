@@ -8,6 +8,8 @@ import assetRoute from './assets/assets.route';
 import projectRoute from './project/project.route';
 import renderHtml from './render/render.controller';
 import userRoute from './user/user.route';
+
+
 //Initialize App
 const app = express();
 app.use(express.json());
@@ -20,10 +22,19 @@ const corsOptions = {
 corsOptions.credentials = true;
 app.use(cors(corsOptions));
 
+
+
+const swaggerUi = require('swagger-ui-express'),
+swaggerDocument = require('./swagger.json');
+
+
+
+
 //HTML and Static file
 app.use('/resources', express.static(path.join(__dirname, 'public')));
 app.set('views', `views`);
 app.set('view engine', 'hbs');
+
 
 const mongoUri = 'mongodb://127.0.0.1:27017/webpage_builder';
 mongoose.connect(
@@ -48,6 +59,7 @@ app.use('/api/user', userRoute);
 app.get('/:pageId?', renderHtml);
 
 
+app.use('/api/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const PORT = process.env.APP_PORT || 4000;
 app.listen(PORT, () => {
