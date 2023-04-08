@@ -1,5 +1,5 @@
 const { Configuration, OpenAIApi } = require('openai');
-const VITE_Open_AI_Key = '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';
+const VITE_Open_AI_Key = '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';
 const configuration = new Configuration({
   apiKey: VITE_Open_AI_Key,
 });
@@ -7,7 +7,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export const generateImage = async (prompt) => {
-  const response =  await openai.createImage({
+  return await openai.createImage({
     prompt,
     n: 1,
     size: '256x256',
