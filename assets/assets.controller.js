@@ -1,3 +1,5 @@
+import Assests from './assets.model'
+
 export const loadAllAssets = async (req, res) => {
   const assets = [
     {
@@ -21,3 +23,10 @@ export const loadAllAssets = async (req, res) => {
   ];
   res.json(assets);
 };
+
+
+export const getById = async (req, res) =>{
+  const {id} = req.params;
+  const result = await Assests.findById({_id:id}) 
+  res.json(result)
+}
