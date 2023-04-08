@@ -15,6 +15,12 @@
     {
       "name": "Pages",
       "description": "API for pages in the system"
+
+    },
+    {
+      "name": "Assets",
+      "description": "API for Assets in the system"
+
     }
   ],
   "schemes": [
@@ -26,6 +32,7 @@
   "produces": [
     "application/json"
   ],
+
   "paths": {
     "/pages": {
       "post": {
@@ -54,9 +61,75 @@
             }
           }
         }
+      },
+
+      "get": {
+        "tags": [
+          "Pages"
+        ],
+        "summary": "Get all pages in system",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Page"
+            }
+          }
+        }
       }
+    },
+
+    "/pages/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "ID of Page that we want to find",
+          "type": "string",
+          "pattern":"^[0-9a-fA-F]{24}$"
+        }
+      ],
+      "delete": {
+        "summary": "Delete Page with given ID",
+        "tags": [
+          "Pages"
+        ],
+        "responses": {
+          "200": {
+            "description": "Page is deleted",
+            "schema": {
+              "$ref": "#/definitions/Page"
+            }
+          }
+        }
+      },
+
+      "get": {
+        "summary": "Get Page with given ID",
+        "tags": [
+          "Pages"
+        ],
+        "responses": {
+          "200": {
+            "description": "Page Information",
+            "schema": {
+              "$ref": "#/definitions/Page"
+            }
+          }
+        }
+      }
+
     }
+
+
   },
+
+
+
+  
+
+
   "definitions": {
     "Page": {
       "required": [

@@ -1,7 +1,7 @@
 {
   "name": "Backend",
   "version": "1.0.0",
-  "description": "[Github Code](https://github.com/vijayshukla30/grapesjs-example-html",
+  "description": "[Github Code](https://github.com/alamjamal/grapejsBackend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

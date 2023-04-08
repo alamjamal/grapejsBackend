@@ -45,7 +45,6 @@ export const addAsset = async (req, res) => {
     await asset.save();
     res.status(200).send(asset);
   } catch (err) {
-    console.log(err);
     res.status(500).send({ message: 'Internal Server Error' });
   }
 };
