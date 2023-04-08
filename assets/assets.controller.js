@@ -47,9 +47,10 @@ export const addAsset = async (req, res) => {
     const response = await generateImage(pageInfo.type);
     let asset = new Assests({
       pageId,
-      src: response.data.data[0].url,
+      src: response[2].urls.regular,
       // src: 'https://plus.unsplash.com/premium_photo-1674332003760-4eaf45ea87ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80',
     });
+    // console.log(response.length);
     asset = await asset.save();
     res.status(200).send(asset);
   } catch (err) {

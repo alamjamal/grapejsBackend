@@ -7,7 +7,7 @@ assetRoute.get('/', loadAllAssets);
 
 assetRoute.get('/addasset/:pageId', addAsset);
 
-assetRoute.post('/addcontent/:pageId', addContent);
+assetRoute.get('/addcontent/:pageId', addContent);
 
 assetRoute.get('/content/:id', getContentById);
 
