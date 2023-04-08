@@ -4,7 +4,7 @@ import { loadAllAssets , getById , addAsset } from './assets.controller';
 const assetRoute = express.Router();
 
 assetRoute.get('/', loadAllAssets);
+assetRoute.get('/addasset/:pageId', addAsset);
 assetRoute.get('/:id', getById);
-assetRoute.post('/', addAsset);
 
 export default assetRoute;
