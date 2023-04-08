@@ -13,3 +13,10 @@ export const generateImage = async (prompt) => {
     size: '256x256',
   });
 };
+
+export const generateText = async (prompt) => {
+  return await openai.createChatCompletion({
+    model: 'gpt-3.5-turbo',
+    messages: [{ role: 'user', content: prompt }],
+  });
+};

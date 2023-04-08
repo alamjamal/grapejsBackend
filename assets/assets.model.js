@@ -14,12 +14,15 @@ const Assets = new mongoose.Schema(
     },
     width: {
       type: String,
-      default : 256
+      default : 250
     },
     height: {
       type: String,
-      default : 256
+      default : 350
     },
+    content : {
+      type : [ String ]
+    }
   },
   {
     timestamps: true,
