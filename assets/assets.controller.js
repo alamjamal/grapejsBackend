@@ -45,14 +45,15 @@ export const addAsset = async (req, res) => {
   if (!pageInfo) return res.status(400).send({ message: 'Page Not Exist' });
   try {
     const response = await generateImage(pageInfo.type);
-    let asset = new Assests({
-      pageId,
-      src: response[2].urls.regular,
-      // src: 'https://plus.unsplash.com/premium_photo-1674332003760-4eaf45ea87ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1075&q=80',
+
+    response.map(async (data) => {
+      let asset = new Assests({
+        pageId,
+        src: data.urls.regular,
+      });
+      asset = await asset.save();
     });
-    // console.log(response.length);
-    asset = await asset.save();
-    res.status(200).send(asset);
+    res.send();
   } catch (err) {
     res.status(500).send({ message: 'Internal Server Error' });
   }
