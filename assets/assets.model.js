@@ -10,7 +10,6 @@ const Assets = new mongoose.Schema(
     },
     src: {
       type: String,
-      required: true,
     },
     width: {
       type: String,
@@ -20,9 +19,6 @@ const Assets = new mongoose.Schema(
       type: String,
       default : 350
     },
-    content : {
-      type : [ String ]
-    }
   },
   {
     timestamps: true,
