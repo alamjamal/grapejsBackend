@@ -7,9 +7,9 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export const generateImage = async (prompt) => {
-  // return await openai.createImage({
-  //   prompt,
-  //   n: 1,
-  //   size: '256x256',
-  // });
+  return await openai.createImage({
+    prompt,
+    n: 1,
+    size: '256x256',
+  });
 };
